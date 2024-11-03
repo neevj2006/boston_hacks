@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { getCompletedVocab } from "@/db/queries";
 
 type Props = {
