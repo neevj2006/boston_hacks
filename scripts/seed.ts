@@ -725,6 +725,12 @@ const main = async () => {
       },
     ]);
 
+    //await db.insert(schema.alreadyLearnedVocab).values([
+    //   {
+    //      word:"hello"
+    //    },
+    //  ]);
+
     console.log("Seeding finished");
   } catch (error) {
     console.error(error);
