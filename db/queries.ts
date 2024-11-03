@@ -260,3 +260,14 @@ export const getTopTenUsers = cache(async () => {
 
   return data;
 });
+
+
+export const getCompletedVocab = async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return [];
+  }
+  const data = db.query.alreadyLearnedVocab.findMany();
+  return data;
+}
