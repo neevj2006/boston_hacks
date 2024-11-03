@@ -36,7 +36,7 @@ async function getClaudeResponse(text: string): Promise<string> {
         return "How old are you";
       } else if (text === "Ngày hôm nay của bạn thế nào") {
         return "How is your day today";
-      } else if (text === "Hôm nay trời đẹp quá") {
+      } else if (text === "Hôm nay trời đẹp quá.") {
         return "The weather today is really good";
       } else if (text === "Tôi muốn mua cái này") {
         return "I want to buy this";
