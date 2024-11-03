@@ -4,6 +4,8 @@ import { neon } from "@neondatabase/serverless";
 
 import * as schema from "../db/schema";
 
+// To Do: Change Question audios
+
 const sql = neon(process.env.DATABASE_URL!);
 // @ts-ignore
 const db = drizzle(sql, { schema });
@@ -103,7 +105,6 @@ const main = async () => {
         type: "SELECT",
         order: 1,
         question: "Choose the correct option?",
-        audioSrc: "/Q1.mp3",
       },
       {
         id: 2,
@@ -111,7 +112,6 @@ const main = async () => {
         type: "SELECT",
         order: 2,
         question: "Choose the correct option?",
-        audioSrc: "/Q2.mp3",
       },
     ]);
 
