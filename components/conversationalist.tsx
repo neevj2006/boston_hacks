@@ -16,13 +16,23 @@ export default function Conversationalist() {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [response, setResponse] = useState("");
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const SpeechRecognition = (window as any).SpeechRecognition || null;
+  const recognitionRef = useRef<typeof SpeechRecognition | null>(null);
   const synthRef = useRef<SpeechSynthesis | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      recognitionRef.current = new (window.SpeechRecognition ||
-        window.webkitSpeechRecognition)();
+      // Define SpeechRecognition with TypeScript compatibility
+      const SpeechRecognition =
+        (window as any).SpeechRecognition ||
+        (window as any).webkitSpeechRecognition;
+
+      if (SpeechRecognition) {
+        recognitionRef.current = new SpeechRecognition();
+        recognitionRef.current.lang = "vi-VN"; // Set language here if needed
+      } else {
+        console.warn("Speech recognition is not supported in this browser.");
+      }
       synthRef.current = window.speechSynthesis;
     }
   }, []);
@@ -32,7 +42,7 @@ export default function Conversationalist() {
       recognitionRef.current.lang = "vi-VN";
       recognitionRef.current.continuous = true;
       recognitionRef.current.interimResults = true;
-      recognitionRef.current.onresult = (event) => {
+      recognitionRef.current.onresult = (event: any) => {
         const current = event.resultIndex;
         const transcript = event.results[current][0].transcript;
         setTranscript(transcript);
