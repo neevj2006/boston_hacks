@@ -89,9 +89,9 @@ export default function Conversationalist() {
   return (
     <Card className="w-full max-w-2xl mx-auto mt-8">
       <CardHeader>
-        <CardTitle>LangLingo Owl</CardTitle>
+        <CardTitle>Lingo Owl</CardTitle>
         <CardDescription>
-          Have a chat with our LangLingo Owl speacially designed to help correct
+          Have a chat with our Lingo Owl speacially designed to help correct
           your speaking skills
         </CardDescription>
       </CardHeader>
