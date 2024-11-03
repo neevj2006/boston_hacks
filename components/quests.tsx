@@ -1,9 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
-
-import { quests } from "@/constants";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { getCompletedVocab } from "@/db/queries";
 
 type Props = {
@@ -18,10 +12,15 @@ export const Quests = async ({ points }: Props) => {
       <div className="flex items-center justify-between w-full space-y-2">
         <h3 className="font-bold text-lg">Vocabulary</h3>
       </div>
+      {completedVocab.length > 0 && (
+        <ul className="w-full space-y-2">
+          {completedVocab.map((item: { word: string; id: number }) => {
+            return <li key={item.id}>{item.word}</li>;
+          })}
+        </ul>
+      )}
       <ul className="w-full space-y-2">
-        {completedVocab.map((item: { word: string; id: number }) => {
-          return <li key={item.id}>{item.word}</li>;
-        })}
+        <li>You haven't learned any words</li>
       </ul>
     </div>
   );

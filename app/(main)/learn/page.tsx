@@ -16,6 +16,7 @@ import {
 
 import { Unit } from "./unit";
 import { Header } from "./header";
+import Conversationalist from "./../../../components/conversationalist";
 
 const LearnPage = async () => {
   const userProgressData = getUserProgress();
@@ -74,6 +75,7 @@ const LearnPage = async () => {
             />
           </div>
         ))}
+        <Conversationalist />
       </FeedWrapper>
     </div>
   );
