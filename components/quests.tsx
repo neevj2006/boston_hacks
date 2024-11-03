@@ -19,9 +19,11 @@ export const Quests = async ({ points }: Props) => {
           })}
         </ul>
       )}
-      <ul className="w-full space-y-2">
-        <li>You haven't learned any words</li>
-      </ul>
+      {completedVocab.length === 0 && (
+        <ul className="w-full space-y-2">
+          <li>You haven't learned any words</li>
+        </ul>
+      )}
     </div>
   );
 };

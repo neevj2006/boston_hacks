@@ -141,14 +141,14 @@ const main = async () => {
         lessonId: 1, // Q1
         type: "SELECT",
         order: 1,
-        question: "Choose the correct option?",
+        question: "Choose the correct option",
       },
       {
         id: 2,
         lessonId: 1, // Q2
         type: "SELECT",
         order: 2,
-        question: "Choose the correct option?",
+        question: "Choose the correct option",
       },
     ]);
 
