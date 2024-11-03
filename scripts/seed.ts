@@ -61,6 +61,13 @@ const main = async () => {
         description: "Listening phrases",
         order: 1,
       },
+      {
+        id: 2,
+        courseId: 2, //Vietnamese
+        title: "Unit 2",
+        description: "Vocabulary",
+        order: 2,
+      },
     ]);
 
     //LISTENING lessons
@@ -92,6 +99,36 @@ const main = async () => {
       {
         id: 5,
         unitId: 1, // Unit 1 Important phrases 5
+        order: 5,
+        title: "five",
+      },
+      {
+        id: 6,
+        unitId: 2, // Unit 2 Vocab
+        order: 1,
+        title: "one",
+      },
+      {
+        id: 7,
+        unitId: 2, // Unit 2 Vocab
+        order: 2,
+        title: "two",
+      },
+      {
+        id: 8,
+        unitId: 2, // Unit 2 Vocab
+        order: 3,
+        title: "three",
+      },
+      {
+        id: 9,
+        unitId: 2, // Unit 2 Vocab
+        order: 4,
+        title: "four",
+      },
+      {
+        id: 10,
+        unitId: 2, // Unit 2 Vocab
         order: 5,
         title: "five",
       },
@@ -405,6 +442,286 @@ const main = async () => {
         correct: false,
         text: "Less sweet.",
         audioSrc: "/Q8.mp3",
+      },
+    ]);
+
+    //VOCAB challenge 6
+    await db.insert(schema.challenges).values([
+      {
+        id: 11,
+        lessonId: 6, // Q1
+        type: "ASSIST",
+        order: 1,
+        question: "Translate cái gì",
+      },
+      {
+        id: 12,
+        lessonId: 6, // Q2
+        type: "ASSIST",
+        order: 2,
+        question: "Translate giúp",
+      },
+    ]);
+
+    //LISTENING challenge 6 options 1
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 11,
+        correct: true,
+        text: "What",
+      },
+      {
+        challengeId: 11,
+        correct: false,
+        text: "When",
+      },
+      {
+        challengeId: 11,
+        correct: false,
+        text: "Where",
+      },
+    ]);
+
+    //LISTENING challenge 6 options 2
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 12,
+        correct: false,
+        text: "Call",
+      },
+      {
+        challengeId: 12,
+        correct: false,
+        text: "Give",
+      },
+      {
+        challengeId: 12,
+        correct: true,
+        text: "Help",
+      },
+    ]);
+
+    //VOCAB challenge 7
+    await db.insert(schema.challenges).values([
+      {
+        id: 13,
+        lessonId: 7, // Q1
+        type: "ASSIST",
+        order: 1,
+        question: "Translate nhà hàng",
+      },
+      {
+        id: 14,
+        lessonId: 7, // Q2
+        type: "ASSIST",
+        order: 2,
+        question: "Translate mì",
+      },
+    ]);
+
+    //LISTENING challenge 7 options 1
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 13,
+        correct: false,
+        text: "office",
+      },
+      {
+        challengeId: 13,
+        correct: true,
+        text: "restaurant",
+      },
+      {
+        challengeId: 13,
+        correct: false,
+        text: "hospital",
+      },
+    ]);
+
+    //LISTENING challenge 7 options 2
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 14,
+        correct: false,
+        text: "Rice",
+      },
+      {
+        challengeId: 14,
+        correct: false,
+        text: "Bread",
+      },
+      {
+        challengeId: 14,
+        correct: true,
+        text: "Noodle",
+      },
+    ]);
+
+    //VOCAB challenge 8
+    await db.insert(schema.challenges).values([
+      {
+        id: 15,
+        lessonId: 8, // Q1
+        type: "ASSIST",
+        order: 1,
+        question: "Translate trường học",
+      },
+      {
+        id: 16,
+        lessonId: 8, // Q2
+        type: "ASSIST",
+        order: 2,
+        question: "Translate đi thẳng",
+      },
+    ]);
+
+    //LISTENING challenge 8 options 1
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 15,
+        correct: false,
+        text: "House",
+      },
+      {
+        challengeId: 15,
+        correct: false,
+        text: "Church",
+      },
+      {
+        challengeId: 15,
+        correct: true,
+        text: "School",
+      },
+    ]);
+
+    //LISTENING challenge 8 options 2
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 16,
+        correct: false,
+        text: "Go left",
+      },
+      {
+        challengeId: 16,
+        correct: true,
+        text: "Go straight",
+      },
+      {
+        challengeId: 16,
+        correct: false,
+        text: "Go right",
+      },
+    ]);
+
+    //VOCAB challenge 9
+    await db.insert(schema.challenges).values([
+      {
+        id: 17,
+        lessonId: 9, // Q1
+        type: "ASSIST",
+        order: 1,
+        question: "Translate Ít",
+      },
+      {
+        id: 18,
+        lessonId: 9, // Q2
+        type: "ASSIST",
+        order: 2,
+        question: "Translate ly",
+      },
+    ]);
+
+    //LISTENING challenge 9 options 1
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 17,
+        correct: true,
+        text: "Little",
+      },
+      {
+        challengeId: 17,
+        correct: false,
+        text: "Average",
+      },
+      {
+        challengeId: 17,
+        correct: false,
+        text: "Many",
+      },
+    ]);
+
+    //LISTENING challenge 9 options 2
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 18,
+        correct: false,
+        text: "Bottle",
+      },
+      {
+        challengeId: 18,
+        correct: true,
+        text: "Cup",
+      },
+      {
+        challengeId: 18,
+        correct: false,
+        text: "Bowl",
+      },
+    ]);
+
+    //VOCAB challenge 10
+    await db.insert(schema.challenges).values([
+      {
+        id: 19,
+        lessonId: 10, // Q1
+        type: "ASSIST",
+        order: 1,
+        question: "Translate nước",
+      },
+      {
+        id: 20,
+        lessonId: 10, // Q2
+        type: "ASSIST",
+        order: 2,
+        question: "Translate cay",
+      },
+    ]);
+
+    //LISTENING challenge 10 options 1
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 19,
+        correct: false,
+        text: "Fire",
+      },
+      {
+        challengeId: 19,
+        correct: false,
+        text: "Tree",
+      },
+      {
+        challengeId: 19,
+        correct: true,
+        text: "Water",
+      },
+    ]);
+
+    //LISTENING challenge 10 options 2
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 20,
+        correct: true,
+        text: "Spicy",
+      },
+      {
+        challengeId: 20,
+        correct: false,
+        text: "Sour",
+      },
+      {
+        challengeId: 20,
+        correct: false,
+        text: "Sweet",
       },
     ]);
 
