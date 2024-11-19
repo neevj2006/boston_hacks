@@ -1,3 +1,6 @@
+### **About Our Project**
+[YouTube Video](https://youtu.be/PU2-lhmB7gE)
+
 ### **Inspiration**
 Lingo was inspired by the limitations we observed in the popular language-learning app, Duolingo. While Duolingo is engaging and fun, it often lacks real-life conversational application. We set out to create a demo that enhances user engagement, retains relevant vocabulary, and emphasizes practical language skills such as speaking, listening, and comprehension.
 
@@ -29,6 +32,3 @@ Due to time constraints, we were unable to implement all desired features. Futur
 
 ### **Deployment**
 [Website](https://www.langlingo.tech/)
-
-### **About Our Project**
-[YouTube Video](https://youtu.be/PU2-lhmB7gE)
