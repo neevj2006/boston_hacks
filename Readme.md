@@ -26,3 +26,6 @@ Working with Next.js for full-stack development taught us efficient server-side 
 Due to time constraints, we were unable to implement all desired features. Future plans include:
 - Implementing a response time tracker to categorize vocabulary difficulty based on user response speed, which can inform flashcard creation for active recall and spaced repetition.
 - Allowing users to personalize their learning order to enhance their study experience.
+
+### **Deployment**
+https://www.langlingo.tech/
