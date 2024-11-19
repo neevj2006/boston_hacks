@@ -28,4 +28,7 @@ Due to time constraints, we were unable to implement all desired features. Futur
 - Allowing users to personalize their learning order to enhance their study experience.
 
 ### **Deployment**
-https://www.langlingo.tech/
+[Website](https://www.langlingo.tech/)
+
+### **About Our Project**
+[YouTube Video](https://youtu.be/PU2-lhmB7gE)
