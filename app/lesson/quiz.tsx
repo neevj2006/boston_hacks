@@ -1,23 +1,30 @@
 "use client";
 
-import { toast } from "sonner";
 import Image from "next/image";
-import Confetti from "react-confetti";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
-import { useAudio, useWindowSize, useMount } from "react-use";
+import Confetti from "react-confetti";
+import { useAudio, useMount, useWindowSize } from "react-use";
+import { toast } from "sonner";
 
-import { reduceHearts } from "@/actions/user-progress";
-import { useHeartsModal } from "@/store/use-hearts-modal";
-import { challengeOptions, challenges, userSubscription } from "@/db/schema";
-import { usePracticeModal } from "@/store/use-practice-modal";
 import { upsertChallengeProgress } from "@/actions/challenge-progress";
+import { reduceHearts } from "@/actions/user-progress";
+import { challengeOptions, challenges, userSubscription } from "@/db/schema";
+import { useHeartsModal } from "@/store/use-hearts-modal";
+import { usePracticeModal } from "@/store/use-practice-modal";
 
-import { Header } from "./header";
-import { Footer } from "./footer";
 import { Challenge } from "./challenge";
-import { ResultCard } from "./result-card";
+import { Footer } from "./footer";
+import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
+import { ResultCard } from "./result-card";
+
+import { updateVocab} from "./updateLearnedVocab";
+
+
+
+
+
 
 type Props ={
   initialPercentage: number;
@@ -31,6 +38,9 @@ type Props ={
     isActive: boolean;
   } | null;
 };
+
+
+
 
 export const Quiz = ({
   initialPercentage,
@@ -102,12 +112,12 @@ export const Quiz = ({
     }
 
     if (status === "correct") {
+    
       onNext();
       setStatus("none");
       setSelectedOption(undefined);
       return;
     }
-
     const correctOption = options.find((option) => option.correct);
 
     if (!correctOption) {
@@ -123,6 +133,7 @@ export const Quiz = ({
               return;
             }
 
+            updateVocab();
             correctControls.play();
             setStatus("correct");
             setPercentage((prev) => prev + 100 / challenges.length);
@@ -156,7 +167,10 @@ export const Quiz = ({
   };
 
   if (!challenge) {
+    
+    updateVocab();
     return (
+      
       <>
         {finishAudio}
         <Confetti
